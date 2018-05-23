@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14101" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RAddRuleViewController">
             <connections>
+                <outlet property="createRuleButton" destination="Jhv-up-R51" id="rOV-0e-TmW"/>
+                <outlet property="nameTextField" destination="zlL-lt-hiF" id="vxY-Ep-wFt"/>
+                <outlet property="ruleTextField" destination="sLR-Uy-Uul" id="GRM-Xj-hdA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,19 +23,39 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acá se tendria que definir como inicializo el Rule" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo8-mn-MiT">
-                    <rect key="frame" x="16" y="298" width="343" height="72"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zlL-lt-hiF">
+                    <rect key="frame" x="16" y="36" width="343" height="30"/>
                     <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Regla" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sLR-Uy-Uul">
+                    <rect key="frame" x="16" y="82" width="343" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhv-up-R51">
+                    <rect key="frame" x="263" y="128" width="96" height="30"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="  Crear Regla  ">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="createRuleButtonWasTapped:" destination="-1" eventType="touchUpInside" id="KUw-FU-eFZ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Jo8-mn-MiT" secondAttribute="trailing" constant="16" id="5eJ-to-jHE"/>
-                <constraint firstItem="Jo8-mn-MiT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DAF-Nk-cd5"/>
-                <constraint firstItem="Jo8-mn-MiT" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="GGM-D6-dTP"/>
-                <constraint firstItem="Jo8-mn-MiT" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="e7H-KG-YSV"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Jhv-up-R51" secondAttribute="trailing" constant="16" id="5Of-pa-EVA"/>
+                <constraint firstItem="Jhv-up-R51" firstAttribute="top" secondItem="sLR-Uy-Uul" secondAttribute="bottom" constant="16" id="9IW-9C-ROI"/>
+                <constraint firstItem="zlL-lt-hiF" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="EVl-F9-csG"/>
+                <constraint firstItem="sLR-Uy-Uul" firstAttribute="top" secondItem="zlL-lt-hiF" secondAttribute="bottom" constant="16" id="HLl-8p-ciU"/>
+                <constraint firstItem="sLR-Uy-Uul" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="LA3-gl-TN8"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="sLR-Uy-Uul" secondAttribute="trailing" constant="16" id="Pqf-I9-7fY"/>
+                <constraint firstItem="zlL-lt-hiF" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="16" id="e2M-OT-gqC"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="zlL-lt-hiF" secondAttribute="trailing" constant="16" id="qkZ-iL-Stf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
         </view>

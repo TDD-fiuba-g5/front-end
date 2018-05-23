@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14101" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RRuleViewController">
             <connections>
+                <outlet property="graph" destination="c88-I9-2M9" id="vIT-IN-PCd"/>
+                <outlet property="ruleNameLabel" destination="7cV-3Y-UNe" id="imv-cF-igV"/>
+                <outlet property="ruleRuleLabel" destination="9rT-gr-w9s" id="m7b-e9-5pH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,19 +23,39 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Algun dato interesante" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYY-qk-By3">
-                    <rect key="frame" x="16" y="28" width="173" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cV-3Y-UNe">
+                    <rect key="frame" x="146.5" y="70" width="82" height="36"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rT-gr-w9s">
+                    <rect key="frame" x="16" y="144" width="343" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c88-I9-2M9" customClass="BEMSimpleLineGraphView">
+                    <rect key="frame" x="16" y="195" width="343" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="vek-KA-UAd"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="HYY-qk-By3" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="8" id="FmQ-dc-9AO"/>
-                <constraint firstItem="HYY-qk-By3" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="fEU-mu-KC2"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="c88-I9-2M9" secondAttribute="trailing" constant="16" id="22C-ya-PiO"/>
+                <constraint firstItem="c88-I9-2M9" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="K3f-2T-Tp7"/>
+                <constraint firstItem="c88-I9-2M9" firstAttribute="top" secondItem="9rT-gr-w9s" secondAttribute="bottom" constant="30" id="cyN-Jf-WBe"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="9rT-gr-w9s" secondAttribute="trailing" constant="16" id="dAA-zg-s59"/>
+                <constraint firstItem="9rT-gr-w9s" firstAttribute="top" secondItem="7cV-3Y-UNe" secondAttribute="bottom" constant="38" id="gyF-7X-TFV"/>
+                <constraint firstItem="7cV-3Y-UNe" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="luS-9Y-VAT"/>
+                <constraint firstItem="7cV-3Y-UNe" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="50" id="r3i-VZ-ZLN"/>
+                <constraint firstItem="9rT-gr-w9s" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="yZp-Zy-PGr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="33.5" y="116.5"/>
         </view>
     </objects>
 </document>

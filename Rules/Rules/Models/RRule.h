@@ -10,6 +10,9 @@
 
 @interface RRule : NSObject
 
+@property (nonatomic) NSUInteger id;
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *rule;
+@property (strong, nonatomic) NSString *status;
 
 @end

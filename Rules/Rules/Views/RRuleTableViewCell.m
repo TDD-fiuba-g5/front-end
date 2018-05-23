@@ -11,6 +11,7 @@
 @interface RRuleTableViewCell()
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *stateLabel;
 
 @end
 
@@ -29,6 +30,8 @@
 
 - (void)updateUI {
     self.nameLabel.text = self.rule.name;
+
+//    self.stateLabel.text = self.rule.status != nil ? self.rule.status : @"No status";
 }
 
 @end
