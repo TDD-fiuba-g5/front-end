@@ -13,6 +13,8 @@
 #define kAppDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 #define kNavigationFlowManager kAppDelegate.navigationFlowManager
 
+#define kBaseURL @"http://0664a3ce.ngrok.io"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

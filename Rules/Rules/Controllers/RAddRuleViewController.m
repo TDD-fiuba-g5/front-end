@@ -9,6 +9,7 @@
 #import "RAddRuleViewController.h"
 
 #import "RRule.h"
+#import "AppDelegate.h"
 
 @interface RAddRuleViewController ()
 
@@ -54,11 +55,11 @@
 - (void)postRule:(RRule *)rule success:(void(^)(void))success failure:(void(^)(NSError *error))failure {
     NSDictionary *headers = @{ @"content-type": @"application/json"};
     NSDictionary *parameters = @{ @"name": rule.name,
-                                  @"rule": rule.rule };
+                                  @"rule": [NSString stringWithFormat:@"'((define-counter \"%@\" [(current \"date\")] (=(current \"state\") \"%@\")))", rule.name, rule.rule]};
     
     NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://6aee3677.ngrok.io/states"]
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/states", kBaseURL]]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"POST"];

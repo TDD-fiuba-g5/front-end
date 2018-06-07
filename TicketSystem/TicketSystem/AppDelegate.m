@@ -16,7 +16,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self setupNavigationFlowManager];
+    
+    self.currentUser = [[TSUser alloc] init];
+    self.currentUser.userid = 1;
+
     return YES;
 }
 
@@ -46,6 +50,13 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+- (void)setupNavigationFlowManager {
+    self.navigationFlowManager = [PPNavigationFlowManager sharedInstance];
+    [self.navigationFlowManager presentLoginViewController:YES];
+}
+
 
 
 @end

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *sendEventButton;
 
 @end
 
@@ -16,14 +17,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [self setup];
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Setup
+- (void)setup {
+    [self setupSendEventButton];
 }
 
+- (void)setupSendEventButton {
+    self.sendEventButton.layer.cornerRadius = self.sendEventButton.frame.size.height / 2.0;
+}
+
+#pragma mark - Actions
+- (IBAction)sendEventButtonWasTapped:(id)sender {
+    NSLog(@"Send event button was tapped");
+}
 
 @end

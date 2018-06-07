@@ -12,6 +12,7 @@
 #import "RRule.h"
 #import "RAddRuleViewController.h"
 #import "RRuleViewController.h"
+#import "AppDelegate.h"
 
 @interface RRulesViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -100,7 +101,7 @@
 
 - (void)getRemoteRules:(Class)remoteObjectClass fromPath:(NSString *)path success:(void(^)(NSArray <RRule *> *))success failure:(void(^)(NSError *error))failure {
 
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://6aee3677.ngrok.io/states"]
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/states", kBaseURL]]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"GET"];
@@ -144,7 +145,7 @@
 
 - (void)deleteRule:(RRule *)rule {
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://6aee3677.ngrok.io/states/%lu", rule.id]]
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/states/%lu", kBaseURL , rule.id]]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
     [request setHTTPMethod:@"DELETE"];
